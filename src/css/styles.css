@@ -7,3 +7,163 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
+
+.form {
+  display: flex;
+  justify-content: center;
+
+  height: 40px;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.form > label > input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 100%;
+  margin-right: 8px;
+  padding-left: 16px;
+  color: #2e2f42;
+
+  transform: border-color;
+  translate: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > label > input:hover,
+.form > label > input:focus {
+  border: 1px solid #000000;
+}
+
+.form > label > input:not(:placeholder-shown) {
+  border: 1px solid #4e75ff;
+}
+
+.form > button {
+  border-radius: 8px;
+  border: none;
+  width: 91px;
+  height: 100%;
+
+  font-weight: 500;
+  color: #fff;
+  background-color: #4e75ff;
+
+  transform: background-color;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form > button:hover,
+.form > button:focus {
+  background-color: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.gallery-item {
+  flex-basis: calc ((100% - 48px) / 3);
+
+  border: 1px solid #808080;
+
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+
+  border: 1px solid #808080;
+  overflow: hidden;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.baner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.baner-li {
+  text-align: center;
+  padding: 4px 0px;
+}
+
+.baner-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.baner-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: zeroRotation 1s linear infinite alternate;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #ff3d00;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+}
+.loader::before {
+  left: auto;
+  right: 0;
+  transform: translate(50%, 100%);
+}
+
+@keyframes zeroRotation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
+}
+
+.loadMoreBtn {
+  display: block;
+  margin: 0 auto;
+}
+
+.loadMoreBtn.hidden {
+  display: none;
+}
